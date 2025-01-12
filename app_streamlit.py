@@ -8,9 +8,9 @@ bearer_token = "xxx"
 def get_status():
     response = requests.get(base_url + '/status')
     if response.status_code == 200:
-        print(response.json())
+        st.success(response.json())
     else:
-        print(response.status_code, response.json())
+        st.error(response.json())
 
 # POST register user on the books API to obtain bearer token
 def register_user(client_mail, client_name):
@@ -28,9 +28,9 @@ def register_user(client_mail, client_name):
 def get_books():
     response = requests.get(base_url + '/books')
     if response.status_code == 200:
-        print(response.json())
+        st.success(response.json())
     else:
-        print(response.status_code, response.json())
+        st.error(response.json())
 
 # POST place a book order
 def place_order(book_id, customer_name):
@@ -54,4 +54,12 @@ client_name = st.text_input("What is your name")
 client_email = st.text_input("What is your email")
 if st.button("Register"):
     response = register_user(client_email, client_name)
+
+st.header("Get Status")
+if st.button("Check"):
+    get_status()
+
+st.header("Get Books")
+if st.button("Fetch"):
+    get_books()
 
