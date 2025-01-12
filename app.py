@@ -1,6 +1,7 @@
 import requests
 
 base_url = "https://simple-books-api.glitch.me"
+bearer_token = "xxx"
 
 # GET status
 def get_status():
@@ -22,7 +23,31 @@ def register_user(client_mail, client_name):
     else:
         print(response.status_code, response.json())
 
+# GET bring list of all books on database
+def get_books():
+    response = requests.get(base_url + '/books')
+    if response.status_code == 200:
+        print(response.json())
+    else:
+        print(response.status_code, response.json())
+
+# POST place a book order
+def place_order(book_id, customer_name):
+    data = {
+            "bookId": book_id,
+            "customerName": customer_name
+        }
+    headers = {
+        "Authorization": "Bearer xxx"
+    }
+    response = requests.post(base_url + '/orders', json=data, headers=headers)
+    if response.status_code == 201:
+        print(response.json())
+    else:
+        print(response.status_code, response.json())
 
 if __name__ == '__main__':
     get_status()
-    register_user("honeybeeboo@gmail.com", "Jocelyn")
+    #register_user("honeybeeboo@gmail.com", "Jocelyn")
+    #get_books()
+    place_order("1", "Jocelyn")
