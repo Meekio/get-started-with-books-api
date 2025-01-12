@@ -4,6 +4,9 @@ Perfect for beginners, this session breaks down the process of making API calls 
 ## Features
 - ✅ TBD
 
+## Run Streamlit
+`streamlit run name_of_script.py`
+
 ## Materials
 - [Slides](https://docs.google.com/presentation/d/1gqTWYRlN1UiWSyx-UBazm31kN--w67-JdW5Aka1yUHA/edit?usp=sharing)
 - [YouTube Recording of Live Session](https://www.youtube.com/live/eLfmafuzcqI?si=oDK_hQvdn4_ok9E7)
