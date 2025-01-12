@@ -28,7 +28,7 @@ def register_user(client_mail, client_name):
 def get_books():
     response = requests.get(base_url + '/books')
     if response.status_code == 200:
-        st.success(response.json())
+        st.success(st.json(response.json()))
     else:
         st.error(response.json())
 
