@@ -10,5 +10,5 @@ def get_status():
     else:
         print(response.status_code, response.json())
         
-if __name__=='__main':
+if __name__=='__main__':
     get_status()
